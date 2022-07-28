@@ -10,7 +10,7 @@
     <h1>문서의 제목</h1>
         <?php
           $name = "홍길동";
-          echo '반갑습니다.' .$name;
+          echo '반갑습니다..' .$name;
         ?>
 </body>
 </html>
