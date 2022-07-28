@@ -12,7 +12,7 @@
         2-1. require_once: 이하 동일
 
     */
-    
+
     include_once('inc/header.php'); 
     // include('inc/header.php'); 
     require_once('inc/functions.php'); 
