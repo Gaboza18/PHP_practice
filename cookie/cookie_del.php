@@ -14,6 +14,9 @@
     <title>cookie delete</title>
 </head>
 <body>
-    
+    <?php
+        echo $cookieName.'의 쿠키가 삭제되었습니다.';
+        echo '생성된 값은' .$_COOKIE[$cookieName].'입니다.';
+    ?>
 </body>
 </html>
