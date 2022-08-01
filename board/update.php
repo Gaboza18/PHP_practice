@@ -23,23 +23,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>view - abc 게시판</title>
+    <title>글수정</title>
 </head>
 <body>
-    <h1>게시판</h1>
-    <h2>글 내용</h2>
+    <h1>수정하기</h1>
     <?php
         if($row = mysqli_fetch_array($result)){
-    ?>        
-        <h3>글 번호: <?= $row['number'] ?> / 글쓴이: <?= $row['name'] ?></h3>
-            <div>
-                <?= $row['message'] ?>
-            </div>
+    ?>   
+        <form action="insert_update.php" method="post">
+            <input type="hidden" name ="number" value="<?= $view_num ?>">
+            <p>
+                <label for="name">이름:</label>
+                <input type="text" id="name" name="name" value="<?= $row['name'] ?>">
+            </p>
+
+            <p>
+                <label for="message">메세지:</label>
+                <textarea name="message" id="message" cols="30" rows="10"><?= $row['message'] ?></textarea>
+            </p>
+            <input type="submit" value="수정하기">
+        </form>
     <?php
         }
         mysqli_close($connect); // DB 접속해제        
     ?>
-    <p><a href="index.php">메인화면으로 돌아가기</a></p>
-    <p><a href="update.php?number=<?= $row['number'] ?>">수정하기</a></p>
 </body>
 </html>
